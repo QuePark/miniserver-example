@@ -3,9 +3,11 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
+const dummyData = require("./dummy.json");
+
 app.get("/data/dummy-news", async (req, res) => {
   const data = {
-    data: require("./dummy.json"),
+    data: dummyData,
   };
   res.status(200).json(data).end();
 });
